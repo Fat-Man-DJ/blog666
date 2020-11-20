@@ -153,71 +153,187 @@
     }
 </script>
             <div class="main">
-                <div class="post-wrap archive">
-                    
-                        
-                            <h3>
-                                2020
-                            </h3>
+                <div class="container">
+                    <article class="post-wrap">
+                        <header class="post-header">
+                            <h1 class="post-title">
+                                Flask+Request实现web接口
+                            </h1>
                             
-                                
-                                    <article class="archive-item">
-                                        <a class="archive-item-link" href="https://blog.fatmandj.name/post/blog-today/">
-                                            Hexo主题开发 Part 1
-                                        </a><span class="archive-item-date">2020-10-25 </span></article>
-                                    
+                                    <!--zh-->
+                                    <div class="post-meta zh">
+                                        &#x4F5C;&#x8005;:
+                                        <a itemprop="author" rel="author" href="/">
+                                            FatManDJ
+                                        </a>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-07-14</a></span>
+                                        <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
+                                    href="#">1.4
+                                    &#x5206;&#x949F;</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">269</a></span>
                                         
+                                            <span class="post-category">&#x5206;&#x7C7B;:
                                 
-                                    <article class="archive-item">
-                                        <a class="archive-item-link" href="https://blog.fatmandj.name/post/2020-8-1-docker-post/">
-                                            Flask-1：Hello World
-                                        </a><span class="archive-item-date">2020-08-01 </span></article>
-                                    
-                                        
+                                <a href="https://blog.fatmandj.name/tag/E98X62Y9R_/">Python</a>
                                 
-                                    <article class="archive-item">
-                                        <a class="archive-item-link" href="https://blog.fatmandj.name/post/2020-7-26-md2html/">
-                                            🍳使用Python的Markdown库将Markdown转为HTML
-                                        </a><span class="archive-item-date">2020-07-26 </span></article>
-                                    
-                                        
+                                <a href="https://blog.fatmandj.name/tag/FkB9zsvOId/">Web</a>
                                 
-                                    <article class="archive-item">
-                                        <a class="archive-item-link" href="https://blog.fatmandj.name/post/2020-7-25-typecho-blog/">
-                                            使用免费主机搭建Typecho博客(上)
-                                        </a><span class="archive-item-date">2020-07-25 </span></article>
-                                    
-                                        
-                                
-                                    <article class="archive-item">
-                                        <a class="archive-item-link" href="https://blog.fatmandj.name/post/2020-7-14-python-web-port/">
-                                            Flask+Request实现web接口
-                                        </a><span class="archive-item-date">2020-07-14 </span></article>
-                                    
-                                        
-                                
-                                    <article class="archive-item">
-                                        <a class="archive-item-link" href="https://blog.fatmandj.name/post/2020-7-11-blog/">
-                                            Linux学习笔记1:爱,软件,和dev包
-                                        </a><span class="archive-item-date">2020-07-11 </span></article>
-                                    
-                                        
-                                
-                                    <article class="archive-item">
-                                        <a class="archive-item-link" href="https://blog.fatmandj.name/post/2020-6-26-script/">
-                                            全自动部署Hexo+Vercel,本地写博客
-                                        </a><span class="archive-item-date">2020-07-01 </span></article>
-                                    
-                                        
+                            </span>
                                             
-                </div>
-                <div class="pagination-container">
-                    
+                                    </div>
+                                    
+                        </header>
+                        
+                        <div class="post-content">
+                            <pre><code class="language-bash">blog with love
+</code></pre>
+<!--more-->
+<p>废话不多说,代码!</p>
+<p>web.py:</p>
+<pre><code class="language-python">from flask import  Flask
+app = Flask(__name__)
+import tokengenerator
+
+@app.route('/')
+def index():
+    return '&lt;h1&gt;Welcome To NGEdit Active Code Port!&lt;/h1&gt;'
+
+@app.route('/token')
+def index():
+  return tokengenerator.token()
+
+if __name__ == '__main__':
+    app.run(port=80)
+</code></pre>
+<p>tokengenerator.py:</p>
+<pre><code class="language-Python">import time
+import random
+
+
+lsa = list(&quot;12aAbBcCdDeEfFgGhHiIjJkK9lLm78MnNoO56pPqQrLsStTuUvV34wWxXyYzZ&quot;)
+def token:
+    p = random.choice(lsa)
+    p1 = random.choice(lsa)
+    p2 = random.choice(lsa)
+    p3 = random.choice(lsa)
+    p4 = random.choice(lsa)
+    p5 = random.choice(lsa)
+    p6 = random.choice(lsa)
+    p7 = random.choice(lsa)
+    p8 = random.choice(lsa)
+    p9 = random.choice(lsa)
+    p10 = random.choice(lsa)
+    p11 = random.choice(lsa)
+    p12 = random.choice(lsa)
+    p13 = random.choice(lsa)
+    p14 = random.choice(lsa)
+
+
+
+    hole = p+p1+p2+p3+p4+p5+p6+p7+p8+p9+p10+p11+p12+p13+p14
+    return hole
+</code></pre>
+<p>crawl.py:</p>
+<pre><code class="language-python">import request
+
+response = request.get(&quot;http://localhost:80/token&quot;)
+print(response.text)
+</code></pre>
+<p>利用python做web的好处就是:</p>
+<p>可以直接返回python中的变量</p>
+<p>也就是说:</p>
+<h3 id="你可以直接用pymysqlredis-py直接返回数据库中的数据">你可以直接用pymysql,redis-py直接返回数据库中的数据</h3>
+<p>所以好处就体现出来了~</p>
+<p>在第一个文件中,我们创建了一个flask程序,指定了/token地址返回激活码</p>
+<p>在第二个文件,我们生成了随机的token</p>
+<p>在crawl.py中来爬取网页数据</p>
+<p>end~~</p>
+
+                        </div>
                         
                                 
-                                        
+                                    
+                                            <!--zh-->
+                                            <section class="post-copyright zh">
+                                                <p class="copyright-item ">
+                                                    <span>&#x4F5C;&#x8005;:</span>
+                                                    <span>FatManDJ</span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
+                                                    <span><a href="https://blog.fatmandj.name/post/2020-7-14-python-web-port/">https://blog.fatmandj.name/post/2020-7-14-python-web-port/</a></span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x534F;&#x8BAE;:</span>
+                                                    <span>MIT License</span>
+                                                </p>
+                                            </section>
+                                            
+                                                
+                                                    
+                                                                    <!--Share-->
+                                                                    <span style="margin-right:15px">
+                        <i class="post-share"></i>
+                        <span>&#x5206;&#x4EAB;:</span>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://blog.fatmandj.name/post/2020-7-14-python-web-port/"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.fatmandj.name/post/2020-7-14-python-web-port/&sharesource=qzone&title=Flask+Request实现web接口&pics=https://blog.fatmandj.name/images/avatar.png?v=1605869981191&summary=&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;blog with love
+&lt;/code&gt;&lt;/pre&gt;
+"><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://blog.fatmandj.name/post/2020-7-14-python-web-port/&sharesource=weibo&title=Flask+Request实现web接口 + " - " + &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;blog with love
+&lt;/code&gt;&lt;/pre&gt;
+&pic="https://blog.fatmandj.name/images/avatar.png?v=1605869981191 "><i class="fa fa-weibo "></i></a>
+
+                                                                    </span>
+                                                                    
+                                                                            <!--zh-->
+                                                                            <section class="post-tags zh ">
+                                                                                <div>
+                                                                                    <span>&#x6807;&#x7B7E;:</span>
+                                                                                    <span class="tag ">
+                        
+                        
+                        <a href="https://blog.fatmandj.name/tag/E98X62Y9R_/">#
+                    Python
+                        </a>
+                        
+                        <a href="https://blog.fatmandj.name/tag/FkB9zsvOId/">#
+                    Web
+                        </a>
+                        
+                            
+                                </span>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <a href="javascript:window.history.back();">
+                        &#x8FD4;&#x56DE;</a>
+                                                                                    <span>&dot;</span>
+                                                                                    <a href="#">&#x4E3B;&#x9875;</a>
+                                                                                </div>
+                                                                            </section>
+
+                                                                            
+                                                                                <!---->
+                                                                                <section class="post-nav">
+                                                                                    
+                                                                                        <a class="prev" rel="prev" href="https://blog.fatmandj.name/post/2020-7-25-typecho-blog/">
+                                                                                            使用免费主机搭建Typecho博客(上)
+                                                                                        </a>
+                                                                                        
+                                                                                            
+                                                                                                <a class="next" rel="next" href="https://blog.fatmandj.name/post/2020-7-11-blog/">
+                                                                                                    Linux学习笔记1:爱,软件,和dev包
+                                                                                                </a>
+                                                                                                
+                                                                                </section>
+                    </article>
                 </div>
+                
+                                            
             </div>
+    </div>
+    </div>
     </div>
     
         <footer id="footer" class="footer">
@@ -314,5 +430,8 @@
                     
         </div>
 </body>
+<script>
+    scroll();
+</script>
 
 </html>

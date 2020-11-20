@@ -153,71 +153,153 @@
     }
 </script>
             <div class="main">
-                <div class="post-wrap archive">
-                    
-                        
-                            <h3>
-                                2020
-                            </h3>
+                <div class="container">
+                    <article class="post-wrap">
+                        <header class="post-header">
+                            <h1 class="post-title">
+                                Hexo主题开发 Part 1
+                            </h1>
                             
-                                
-                                    <article class="archive-item">
-                                        <a class="archive-item-link" href="https://blog.fatmandj.name/post/blog-today/">
-                                            Hexo主题开发 Part 1
-                                        </a><span class="archive-item-date">2020-10-25 </span></article>
-                                    
+                                    <!--zh-->
+                                    <div class="post-meta zh">
+                                        &#x4F5C;&#x8005;:
+                                        <a itemprop="author" rel="author" href="/">
+                                            FatManDJ
+                                        </a>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-10-25</a></span>
+                                        <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
+                                    href="#">0.8
+                                    &#x5206;&#x949F;</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">198</a></span>
                                         
+                                            <span class="post-category">&#x5206;&#x7C7B;:
                                 
-                                    <article class="archive-item">
-                                        <a class="archive-item-link" href="https://blog.fatmandj.name/post/2020-8-1-docker-post/">
-                                            Flask-1：Hello World
-                                        </a><span class="archive-item-date">2020-08-01 </span></article>
-                                    
-                                        
+                                <a href="https://blog.fatmandj.name/tag/BlrERUdaC/">Hexo</a>
                                 
-                                    <article class="archive-item">
-                                        <a class="archive-item-link" href="https://blog.fatmandj.name/post/2020-7-26-md2html/">
-                                            🍳使用Python的Markdown库将Markdown转为HTML
-                                        </a><span class="archive-item-date">2020-07-26 </span></article>
-                                    
-                                        
-                                
-                                    <article class="archive-item">
-                                        <a class="archive-item-link" href="https://blog.fatmandj.name/post/2020-7-25-typecho-blog/">
-                                            使用免费主机搭建Typecho博客(上)
-                                        </a><span class="archive-item-date">2020-07-25 </span></article>
-                                    
-                                        
-                                
-                                    <article class="archive-item">
-                                        <a class="archive-item-link" href="https://blog.fatmandj.name/post/2020-7-14-python-web-port/">
-                                            Flask+Request实现web接口
-                                        </a><span class="archive-item-date">2020-07-14 </span></article>
-                                    
-                                        
-                                
-                                    <article class="archive-item">
-                                        <a class="archive-item-link" href="https://blog.fatmandj.name/post/2020-7-11-blog/">
-                                            Linux学习笔记1:爱,软件,和dev包
-                                        </a><span class="archive-item-date">2020-07-11 </span></article>
-                                    
-                                        
-                                
-                                    <article class="archive-item">
-                                        <a class="archive-item-link" href="https://blog.fatmandj.name/post/2020-6-26-script/">
-                                            全自动部署Hexo+Vercel,本地写博客
-                                        </a><span class="archive-item-date">2020-07-01 </span></article>
-                                    
-                                        
+                            </span>
                                             
-                </div>
-                <div class="pagination-container">
-                    
+                                    </div>
+                                    
+                        </header>
+                        
+                        <div class="post-content">
+                            <h2 id="1环境准备">1.环境准备</h2>
+<p>Git 和 NodeJS 安装我不会多讲</p>
+<p>但如何安装Hexo环境，有两种方法</p>
+<ol>
+<li></li>
+</ol>
+<pre><code class="language-shell">hexo init
+</code></pre>
+<ol start="2">
+<li></li>
+</ol>
+<p>先clone官方的hexo模板</p>
+<p>执行</p>
+<pre><code class="language-shell">npm install
+# or
+cnpm install
+</code></pre>
+<h2 id="2框架">2.框架</h2>
+<p>随便找一个hexo主题</p>
+<p>然后把文件夹里的文件全部删掉</p>
+<p>然后重命名主题文件夹成你喜欢的名字</p>
+<blockquote>
+<p>注：是themes文件夹里面的主题文件夹，如下</p>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://shop.io.mi-img.com/app/shop/img?id=shop_5d35e09e28f8ebf272d580c528b1eccc.png" alt="pic_1.png" loading="lazy"></figure>
+<h2 id="3hello-world">3.Hello World！</h2>
+<p>在主题文件夹里的layout文件夹，</p>
+<p>新建一个叫index.ejs的文件</p>
+<figure data-type="image" tabindex="2"><img src="https://shop.io.mi-img.com/app/shop/img?id=shop_1af80790de3a4eba27ac1e5e7b50134e.png" alt="屏幕截图 2020-10-25 190203.png" loading="lazy"></figure>
+<p>写入以下内容：</p>
+<pre><code class="language-html">&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    Hello World
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>将_config.yml里的theme改成主题文件夹名</p>
+<p>让后运行Hexo</p>
+<p>浏览localhost:4000</p>
+<p>你应该会看待网页上显示着Hello World</p>
+<p>恭喜你完成了第一步！</p>
+
+                        </div>
                         
                                 
-                                        
+                                    
+                                            <!--zh-->
+                                            <section class="post-copyright zh">
+                                                <p class="copyright-item ">
+                                                    <span>&#x4F5C;&#x8005;:</span>
+                                                    <span>FatManDJ</span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
+                                                    <span><a href="https://blog.fatmandj.name/post/blog-today/">https://blog.fatmandj.name/post/blog-today/</a></span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x534F;&#x8BAE;:</span>
+                                                    <span>MIT License</span>
+                                                </p>
+                                            </section>
+                                            
+                                                
+                                                    
+                                                                    <!--Share-->
+                                                                    <span style="margin-right:15px">
+                        <i class="post-share"></i>
+                        <span>&#x5206;&#x4EAB;:</span>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://blog.fatmandj.name/post/blog-today/"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.fatmandj.name/post/blog-today/&sharesource=qzone&title=Hexo主题开发 Part 1&pics=https://blog.fatmandj.name/images/avatar.png?v=1605869981191&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://blog.fatmandj.name/post/blog-today/&sharesource=weibo&title=Hexo主题开发 Part 1 + " - " + &pic="https://blog.fatmandj.name/images/avatar.png?v=1605869981191 "><i class="fa fa-weibo "></i></a>
+
+                                                                    </span>
+                                                                    
+                                                                            <!--zh-->
+                                                                            <section class="post-tags zh ">
+                                                                                <div>
+                                                                                    <span>&#x6807;&#x7B7E;:</span>
+                                                                                    <span class="tag ">
+                        
+                        
+                        <a href="https://blog.fatmandj.name/tag/BlrERUdaC/">#
+                    Hexo
+                        </a>
+                        
+                            
+                                </span>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <a href="javascript:window.history.back();">
+                        &#x8FD4;&#x56DE;</a>
+                                                                                    <span>&dot;</span>
+                                                                                    <a href="#">&#x4E3B;&#x9875;</a>
+                                                                                </div>
+                                                                            </section>
+
+                                                                            
+                                                                                <!---->
+                                                                                <section class="post-nav">
+                                                                                    
+                                                                                            
+                                                                                                <a class="next" rel="next" href="https://blog.fatmandj.name/post/2020-8-1-docker-post/">
+                                                                                                    Flask-1：Hello World
+                                                                                                </a>
+                                                                                                
+                                                                                </section>
+                    </article>
                 </div>
+                
+                                            
             </div>
+    </div>
+    </div>
     </div>
     
         <footer id="footer" class="footer">
@@ -314,5 +396,8 @@
                     
         </div>
 </body>
+<script>
+    scroll();
+</script>
 
 </html>

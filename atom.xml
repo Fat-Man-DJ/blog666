@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.fatmandj.name</id>
     <title>FatManDJ</title>
-    <updated>2020-11-20T10:52:58.062Z</updated>
+    <updated>2020-11-20T10:59:46.760Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.fatmandj.name"/>
     <link rel="self" href="https://blog.fatmandj.name/atom.xml"/>
@@ -11,45 +11,316 @@
     <icon>https://blog.fatmandj.name/favicon.ico</icon>
     <rights>All rights reserved 2020, FatManDJ</rights>
     <entry>
-        <title type="html"><![CDATA[大家好啊]]></title>
-        <id>https://blog.fatmandj.name/post/da-jia-hao-a/</id>
-        <link href="https://blog.fatmandj.name/post/da-jia-hao-a/">
+        <title type="html"><![CDATA[Hexo主题开发 Part 1]]></title>
+        <id>https://blog.fatmandj.name/post/blog-today/</id>
+        <link href="https://blog.fatmandj.name/post/blog-today/">
         </link>
-        <updated>2020-11-15T12:10:55.000Z</updated>
-        <content type="html"><![CDATA[<p>最近把博客迁移到了Gridea上</p>
-<p>你可以通过<a href="//blog.fatdev.name">FatManDJ</a>这个域名访问旧博客</p>
+        <updated>2020-10-25T07:20:00.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="1环境准备">1.环境准备</h2>
+<p>Git 和 NodeJS 安装我不会多讲</p>
+<p>但如何安装Hexo环境，有两种方法</p>
+<ol>
+<li></li>
+</ol>
+<pre><code class="language-shell">hexo init
+</code></pre>
+<ol start="2">
+<li></li>
+</ol>
+<p>先clone官方的hexo模板</p>
+<p>执行</p>
+<pre><code class="language-shell">npm install
+# or
+cnpm install
+</code></pre>
+<h2 id="2框架">2.框架</h2>
+<p>随便找一个hexo主题</p>
+<p>然后把文件夹里的文件全部删掉</p>
+<p>然后重命名主题文件夹成你喜欢的名字</p>
+<blockquote>
+<p>注：是themes文件夹里面的主题文件夹，如下</p>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://shop.io.mi-img.com/app/shop/img?id=shop_5d35e09e28f8ebf272d580c528b1eccc.png" alt="pic_1.png" loading="lazy"></figure>
+<h2 id="3hello-world">3.Hello World！</h2>
+<p>在主题文件夹里的layout文件夹，</p>
+<p>新建一个叫index.ejs的文件</p>
+<figure data-type="image" tabindex="2"><img src="https://shop.io.mi-img.com/app/shop/img?id=shop_1af80790de3a4eba27ac1e5e7b50134e.png" alt="屏幕截图 2020-10-25 190203.png" loading="lazy"></figure>
+<p>写入以下内容：</p>
+<pre><code class="language-html">&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    Hello World
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>将_config.yml里的theme改成主题文件夹名</p>
+<p>让后运行Hexo</p>
+<p>浏览localhost:4000</p>
+<p>你应该会看待网页上显示着Hello World</p>
+<p>恭喜你完成了第一步！</p>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://blog.fatmandj.name/post/hello-gridea/</id>
-        <link href="https://blog.fatmandj.name/post/hello-gridea/">
+        <title type="html"><![CDATA[Flask-1：Hello World]]></title>
+        <id>https://blog.fatmandj.name/post/2020-8-1-docker-post/</id>
+        <link href="https://blog.fatmandj.name/post/2020-8-1-docker-post/">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+        <updated>2020-07-31T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>[万 物 皆 可 h e l l o w o r l d]</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+        <content type="html"><![CDATA[<p>[万 物 皆 可 h e l l o w o r l d]</p>
+<!--more-->
+<h1 id="1安装">1.安装</h1>
+<pre><code class="language-bash">pip install flask
+</code></pre>
+<p>即可</p>
+<p>如果你没有添加环境变量或者没有安装python，请移步：<a href="https://www.cnblogs.com/vilee/p/10029675.html">Windows下的Python安装与环境变量的配置</a></p>
+<h1 id="2hello-world">2.Hello World</h1>
+<p>新建一个.py文件</p>
+<p>输入：</p>
+<pre><code class="language-python">from flask import  *
+app = Flask(__name__)
+
+
+
+@app.route('/')
+def index():
+    return &quot;Hello World&quot;
+
+app.run(port=80)
+</code></pre>
+<p>运行它</p>
+<p>在游览器里打开localhost</p>
+<p>如果看到Hello World就代表你成功了！</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[🍳使用Python的Markdown库将Markdown转为HTML]]></title>
+        <id>https://blog.fatmandj.name/post/2020-7-26-md2html/</id>
+        <link href="https://blog.fatmandj.name/post/2020-7-26-md2html/">
+        </link>
+        <updated>2020-07-25T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://www.helloimg.com/images/2020/07/26/imaged75af5a02ad05127.png" alt="imaged75af5a02ad05127.png" loading="lazy"></figure>
+]]></summary>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://www.helloimg.com/images/2020/07/26/imaged75af5a02ad05127.png" alt="imaged75af5a02ad05127.png" loading="lazy"></figure>
 <!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+<h1 id="1安装库">1.安装库</h1>
+<p>打开命令行</p>
+<p>输入</p>
+<pre><code class="language-bash">pip install markdown
+</code></pre>
+<h1 id="2使用">2.使用</h1>
+<p>打开IDLE</p>
+<p>新建文件</p>
+<p>输入：</p>
+<pre><code class="language-python">import markdown
+import codecs
+
+def page_generate():
+    file = codecs.open(&quot;page/about.md&quot;,&quot;r&quot;,&quot;utf-8&quot;)#这里自己制定文件目录
+    # 这里打开了文件
+    text = file.read()
+    html = markdown.markdown(text)
+    # 创建读取并转换
+    return html
+page_generate()
+# 这里用codecs打开，是应为编码问题
+</code></pre>
+<p>让后运行，</p>
+<p>在目录下就会看到html文件了</p>
+<p>此博客同步更新于Typecho博客，链接:<a href="http://fatmandj.mmkfc.com/index.php/archives/6/">使用Python的Markdown库将Markdown转为HTML</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用免费主机搭建Typecho博客(上)]]></title>
+        <id>https://blog.fatmandj.name/post/2020-7-25-typecho-blog/</id>
+        <link href="https://blog.fatmandj.name/post/2020-7-25-typecho-blog/">
+        </link>
+        <updated>2020-07-24T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://www.helloimg.com/images/2020/07/25/image550df1437cf3eecf.png" alt="" loading="lazy"></figure>
+]]></summary>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://www.helloimg.com/images/2020/07/25/image550df1437cf3eecf.png" alt="" loading="lazy"></figure>
+<!-- more -->
+<h1 id="1主机">1.主机</h1>
+<p>找到了一个免费的，<a href="http://mmkfc.com">mmkfc</a></p>
+<h2 id="2注册">2.注册：</h2>
+<p>点击注册</p>
+<p>按照步骤输入用户名等信息：</p>
+<figure data-type="image" tabindex="2"><img src="https://www.helloimg.com/images/2020/07/25/image9b72615f6094afdb.png" alt="image9b72615f6094afdb.png" loading="lazy"></figure>
+<p>点击链接</p>
+<p>等待初始化</p>
+<h2 id="3更改密码">3.更改密码</h2>
+<p>（这步十分重要，务必成功！）</p>
+<p>接着点击cpanel.mmkfc.com:</p>
+<figure data-type="image" tabindex="3"><a href="https://www.helloimg.com/image/XeysQ"><img src="https://www.helloimg.com/images/2020/07/25/imagea0dac239dc17b494.png" alt="imagea0dac239dc17b494.png" loading="lazy"></a></figure>
+<p>输入你的control panel password</p>
+<p>密码随便输</p>
+<figure data-type="image" tabindex="4"><a href="https://www.helloimg.com/image/Xq5vt"><img src="https://www.helloimg.com/images/2020/07/25/image7a648d9ac6608ab6.png" alt="image7a648d9ac6608ab6.png" loading="lazy"></a></figure>
+<p>接着选 i forgot the password</p>
+<p>让后他会把修改的密码给你</p>
+<p>接着登录</p>
+<p>把typecho下下来</p>
+<figure data-type="image" tabindex="5"><img src="https://www.helloimg.com/images/2020/07/25/imagef4591e895cbe6f39.png" alt="" loading="lazy"></figure>
+<p><a href="https://typecho.org">Typecho</a></p>
+<p>解压到你想要的位置</p>
+<p>就完成了前半段</p>
+<p>此博客在我的typecho博客里同步发布，链接：<a href="http://fatmandj.mmkfc.com/index.php/archives/4/">使用免费主机搭建Typecho博客(上)</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Flask+Request实现web接口]]></title>
+        <id>https://blog.fatmandj.name/post/2020-7-14-python-web-port/</id>
+        <link href="https://blog.fatmandj.name/post/2020-7-14-python-web-port/">
+        </link>
+        <updated>2020-07-13T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<pre><code class="language-bash">blog with love
+</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<pre><code class="language-bash">blog with love
+</code></pre>
+<!--more-->
+<p>废话不多说,代码!</p>
+<p>web.py:</p>
+<pre><code class="language-python">from flask import  Flask
+app = Flask(__name__)
+import tokengenerator
+
+@app.route('/')
+def index():
+    return '&lt;h1&gt;Welcome To NGEdit Active Code Port!&lt;/h1&gt;'
+
+@app.route('/token')
+def index():
+  return tokengenerator.token()
+
+if __name__ == '__main__':
+    app.run(port=80)
+</code></pre>
+<p>tokengenerator.py:</p>
+<pre><code class="language-Python">import time
+import random
+
+
+lsa = list(&quot;12aAbBcCdDeEfFgGhHiIjJkK9lLm78MnNoO56pPqQrLsStTuUvV34wWxXyYzZ&quot;)
+def token:
+    p = random.choice(lsa)
+    p1 = random.choice(lsa)
+    p2 = random.choice(lsa)
+    p3 = random.choice(lsa)
+    p4 = random.choice(lsa)
+    p5 = random.choice(lsa)
+    p6 = random.choice(lsa)
+    p7 = random.choice(lsa)
+    p8 = random.choice(lsa)
+    p9 = random.choice(lsa)
+    p10 = random.choice(lsa)
+    p11 = random.choice(lsa)
+    p12 = random.choice(lsa)
+    p13 = random.choice(lsa)
+    p14 = random.choice(lsa)
+
+
+
+    hole = p+p1+p2+p3+p4+p5+p6+p7+p8+p9+p10+p11+p12+p13+p14
+    return hole
+</code></pre>
+<p>crawl.py:</p>
+<pre><code class="language-python">import request
+
+response = request.get(&quot;http://localhost:80/token&quot;)
+print(response.text)
+</code></pre>
+<p>利用python做web的好处就是:</p>
+<p>可以直接返回python中的变量</p>
+<p>也就是说:</p>
+<h3 id="你可以直接用pymysqlredis-py直接返回数据库中的数据">你可以直接用pymysql,redis-py直接返回数据库中的数据</h3>
+<p>所以好处就体现出来了~</p>
+<p>在第一个文件中,我们创建了一个flask程序,指定了/token地址返回激活码</p>
+<p>在第二个文件,我们生成了随机的token</p>
+<p>在crawl.py中来爬取网页数据</p>
+<p>end~~</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Linux学习笔记1:爱,软件,和dev包]]></title>
+        <id>https://blog.fatmandj.name/post/2020-7-11-blog/</id>
+        <link href="https://blog.fatmandj.name/post/2020-7-11-blog/">
+        </link>
+        <updated>2020-07-10T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<pre><code class="language-bash">Blog With Love
+</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<pre><code class="language-bash">Blog With Love
+</code></pre>
+<h2 id="-more-"><!--more--></h2>
+<h1 id="1基础中的基础软件安装">1.基础中的基础:软件安装</h1>
+<p><em>注意:以下将用apt为例</em></p>
+<p>最常用的指令:</p>
+<pre><code class="language-bash">apt install &lt;package name&gt;
+</code></pre>
+<p>但这样是不够的,换原才能获得最好效果</p>
+<p>输入:</p>
+<pre><code>sudo vim /etc/apt/sources.list
+</code></pre>
+<p>然后删掉所有的内容</p>
+<p>再输入:</p>
+<pre><code class="language-bash"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse
+</code></pre>
+<p>按下 Esc+:+wq 保存</p>
+<p>然后输入</p>
+<pre><code>apt update
+</code></pre>
+<p>成功</p>
+<hr>
+<h1 id="2deb包的安装">2.deb包的安装</h1>
+<p>简单:</p>
+<pre><code>dpkg install &lt;name&gt;
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[全自动部署Hexo+Vercel,本地写博客]]></title>
+        <id>https://blog.fatmandj.name/post/2020-6-26-script/</id>
+        <link href="https://blog.fatmandj.name/post/2020-6-26-script/">
+        </link>
+        <updated>2020-06-30T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<pre><code class="language-bash">Blog With Love
+</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<pre><code class="language-bash">Blog With Love
+</code></pre>
+<!--more-->
+<p>一天,我在写作业的时候,想</p>
+<pre><code>有什么方法可以让我能抛弃Github的垃圾编辑器吗??
+</code></pre>
+<p>然后,这个脚本就诞生了</p>
+<p>其实挺简单的,就这几句话:</p>
+<pre><code class="language-shell">git add *
+git commit -m &quot;creat a blog&quot;
+git push -f
+</code></pre>
+<p>用法:<br>
+git clone我的博客<br>
+删除.git文件夹<br>
+按照网上教程去初始化并添加repo</p>
+<p>让后运行autoDeploy即可</p>
+<p>而且还需要GIT</p>
+<p>但不过还是挺好用的</p>
+<pre><code class="language-shell">Tips:如果对配置文件有改动,要在本地改然后push
+不然会造成不同步问题
+别问我怎么知道的
+</code></pre>
+<pre><code>WARN:这玩意不想html温顺,错了还能照常显示,更改配置文件有可能会让博客瘫痪
+</code></pre>
 ]]></content>
     </entry>
 </feed>
