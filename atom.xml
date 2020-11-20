@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.fatmandj.name</id>
     <title>FatManDJ</title>
-    <updated>2020-11-20T11:06:02.052Z</updated>
+    <updated>2020-11-20T11:21:03.859Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.fatmandj.name"/>
     <link rel="self" href="https://blog.fatmandj.name/atom.xml"/>
@@ -10,6 +10,59 @@
     <logo>https://blog.fatmandj.name/images/avatar.png</logo>
     <icon>https://blog.fatmandj.name/favicon.ico</icon>
     <rights>All rights reserved 2020, FatManDJ</rights>
+    <entry>
+        <title type="html"><![CDATA[Flask 2:Not Just Hello World]]></title>
+        <id>https://blog.fatmandj.name/post/flask-2not-just-hello-world/</id>
+        <link href="https://blog.fatmandj.name/post/flask-2not-just-hello-world/">
+        </link>
+        <updated>2020-11-20T11:07:34.000Z</updated>
+        <summary type="html"><![CDATA[<p>Flask 2!NJHW!</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Flask 2!NJHW!</p>
+<!-- more -->
+<p>终于有时间写博客了</p>
+<p>Flask 2:</p>
+<h1 id="jinja2">Jinja2</h1>
+<p>Jinja2是一个模板引擎</p>
+<p>代码：</p>
+<pre><code class="language-html">&lt;code&gt;
+    {{ content }}
+&lt;/code&gt;
+</code></pre>
+<h2 id="在flask里使用jinja2">在Flask里使用Jinja2</h2>
+<p>在你的项目文件夹里创建一个叫templates的文件夹</p>
+<pre><code class="language-bash">mkdir templates
+</code></pre>
+<p>然后新建一个叫temp.html的文件</p>
+<p>写入如下内容</p>
+<pre><code class="language-html">&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;center&gt;
+            {{ name }},How Are You?
+        &lt;/center&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>再在python文件里输入</p>
+<pre><code class="language-python">from flask import  *
+app = Flask(__name__)
+
+
+
+@app.route('/')
+def index():
+    return render_template('temp.html',name='666')
+
+app.run(port=80)
+</code></pre>
+<p>运行此文件后，</p>
+<p>访问localhost</p>
+<p>你可以看到666,How are you?</p>
+<h2 id="那就对了">那就对了！</h2>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hexo主题开发 Part 1]]></title>
         <id>https://blog.fatmandj.name/post/blog-today/</id>
