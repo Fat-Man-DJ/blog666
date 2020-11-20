@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.fatmandj.name</id>
-    <title>Gridea</title>
-    <updated>2020-11-20T10:43:39.878Z</updated>
+    <title>FatManDJ</title>
+    <updated>2020-11-20T10:47:24.059Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.fatmandj.name"/>
     <link rel="self" href="https://blog.fatmandj.name/atom.xml"/>
     <subtitle>Go Straight</subtitle>
     <logo>https://blog.fatmandj.name/images/avatar.png</logo>
     <icon>https://blog.fatmandj.name/favicon.ico</icon>
-    <rights>All rights reserved 2020, Gridea</rights>
+    <rights>All rights reserved 2020, FatManDJ</rights>
     <entry>
         <title type="html"><![CDATA[大家好啊]]></title>
         <id>https://blog.fatmandj.name/post/da-jia-hao-a/</id>
