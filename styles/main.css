@@ -1,4 +1,23 @@
 @charset "UTF-8";
+.archive-item {
+  box-shadow: #ccc 0px 10px 10px;
+  background-color: white;
+  transition-duration: 0.5s;
+}
+.archive-item:hover {
+  -webkit-box-shadow: #ccc 0px 10px 10px;
+  -moz-box-shadow: #ccc 0px 10px 10px;
+  box-shadow: #ccc 0px 10px 10px;
+  background-color: white;
+  border: 0px solid;
+  border-radius: 25px;
+}
+.archive-item-link {
+  transition-duration: 0.5s;
+}
+.archive-item-link:hover {
+  color: #222;
+}
 /*Reward*/
 .reward {
   padding: 5px 0;
